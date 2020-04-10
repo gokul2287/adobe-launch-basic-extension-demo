@@ -1,0 +1,25 @@
+{
+  "displayName": "Const data elemet",
+  "name": "const-data-elemet",
+  "platform": "web",
+  "version": "1.0.0",
+  "description": "Provide a constant value ",
+  "author": {
+    "name": "Gokul Agiwal "
+  },
+  "viewBasePath": "src/view/",
+  "iconPath": "resources/icon/ico.svg",
+  "dataElements": [
+    {
+      "displayName": "CDE",
+      "name": "cde",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/cde.js",
+      "viewPath": "dataElements/cde.html"
+    }
+  ]
+}

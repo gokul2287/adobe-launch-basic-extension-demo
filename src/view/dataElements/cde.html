@@ -1,0 +1,47 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Element</title>
+    <link rel="stylesheet" href="//assets.adobedtm.com/activation/reactor/coralui/3.17.0/css/coral.css">
+  </head>
+  <body>
+    <p>Data Element Template</p> 
+
+    <form name="dataElementForm">
+      <label>Constant data element value :</label>
+      <input id = "textin" type = "text" placeholder="Enter the value">
+  </form>
+
+    <p>The Data Element will always return the value that you type into the field above.</p>
+    
+    <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+    <script>
+      window.extensionBridge.register({
+        init: function(info) {
+          if (info.settings) {
+            // TODO Populate form values from persisted settings.
+            document.getElementById("textin").value = info.settings.value;
+          }
+        },
+
+        getSettings: function() {
+          // TODO Return settings object from form values.
+          return {
+            'value': document.getElementById("textin").value
+          }
+        },
+
+        validate: function() {
+          // TODO Return whether settings are valid.
+          var val = document.getElementById("textin").value;
+          var valid = false; 
+          if('undefined' !== typeof val && val && val.length > 0) {
+            valid = true;
+          }
+          return valid;
+        }
+      });
+    </script>
+  </body>
+</html>
